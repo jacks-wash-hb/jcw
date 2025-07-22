@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the history and values behind Jack's Self Serve Car Wash in Huntington Beach.">
+    <meta name="robots" content="index, follow">
+    <title>About Jack's Car Wash</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        .section-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin: 60px 0;
+        }
+        .section-block.reverse {
+            flex-direction: row-reverse;
+        }
+        .section-text {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 30px;
+            color: white;
+            border-radius: 12px;
+        }
+        .section-image {
+            flex: 1;
+        }
+        .section-image img {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .content-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="about-page">
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="videos/woody_at_beach_jacks_logo.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Jack's Car Wash Logo" id="logo">
+            </a>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#location">Location & Hours</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-section">
+        <h2 style="color:white; text-align:center; text-shadow: 2px 2px 6px rgba(0,0,0,0.9);">About Jack's Car Wash</h2>
+
+        <div class="section-block">
+            <div class="section-text">
+                <p>Jack's Self Serve Car Wash carries a legacy that began in 1973, when it first opened its doors to the Huntington Beach community as <strong>EZ Car Wash</strong>. The original vision was simple: make car care quick, affordable, and accessible for everyone. Customers could soap, brush, rinse, and go—all in just a few minutes and for a few dollars.</p>
+                <p>As the demand for better equipment and a more refined experience grew, EZ Car Wash evolved. In 2014, it was upgraded and renamed <strong>U Wash Car Wash</strong>, offering improved water pressure, better soap delivery systems, and a cleaner, more reliable washing experience. This remodel helped usher in a new era of self-serve convenience for car enthusiasts and everyday drivers alike.</p>
+            </div>
+            <div class="section-image">
+                <img src="images/EZCarWash_OG.webp" alt="Vintage EZ Car Wash">
+            </div>
+        </div>
+
+        <div class="section-block reverse">
+            <div class="section-text">
+                <p>Now, in honor of the original founder Jack, the facility has once again been transformed—reborn as <strong>Jack's Self Serve Car Wash</strong>. With a completely modernized layout, the car wash now features high-walled bays to reduce overspray and give each visitor a sense of privacy while they clean.</p>
+                <p>The intuitive dial-based control system lets you switch between features like foam brush, high-pressure rinse, and spot-free rinse at your own pace—delivering an easy, effective clean every time.</p>
+            </div>
+            <div class="section-image">
+                <img src="images/wash-vintage.jpg" alt="Modern Car Wash Bay">
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-text">
+                <p>What truly sets Jack's apart is the water quality. The car wash utilizes a soft water double reverse osmosis (RO) system, engineered for a much larger facility, to ensure the cleanest and purest water reaches your car.</p>
+                <p>The result? Fewer spots, a clearer finish, and less need for hand drying afterward. It’s this kind of extra detail that keeps long-time locals coming back.</p>
+            </div>
+            <div class="section-image">
+                <img src="images/regular_image.jpg" alt="Spot-Free Rinse Experience">
+            </div>
+        </div>
+
+        <div class="section-block reverse">
+            <div class="section-text">
+                <p>Whether you're paying by card or coin, you’ll find the process effortless. Credit card acceptors take tap, slide, or phone payments. Once accepted, your bay activates and starts the timer—just $1 to start and $1 per minute after that.</p>
+                <p>Cash customers are equally welcome. Bays accept quarters and dollar coins, and change machines on site dispense dollar coins for convenience.</p>
+            </div>
+            <div class="section-image">
+                <img src="images/tesla-aqua-auto-elegance.jpg" alt="Easy Payment Options">
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-text">
+                <p>You can vacuum your vehicle, grab cleaning products from the vending area, rinse out towels at the sinks, and enjoy the sunshine while finishing the job.</p>
+                <p>Jack's Car Wash isn't just about clean cars—it's about maintaining a piece of Huntington Beach history. From the early days of EZ Car Wash to today, the mission remains the same: keep things simple, affordable, and high-quality for every customer.</p>
+            </div>
+            <div class="section-image">
+                <img src="images/sunny-beach-wash.png" alt="Huntington Beach Car Wash">
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Jack's Car Wash. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

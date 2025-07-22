@@ -1,0 +1,885 @@
+/* Basic Reset & Global Styles */
+:root {
+    --primary-color: #007bff; /* A common blue, adjust to match site */
+    --secondary-color: #0056b3;
+    --light-gray: #f8f9fa;
+    --dark-gray: #333;
+    --text-color: #555;
+    --white: #fff;
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    padding-top: var(--header-height);
+
+    background-image: url('images/water.webp');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden; /* Clears floats */
+}
+
+h1, h2,  {
+    color: var(--white);
+    margin-bottom: 0.75em;
+	text-shadow: 1px 1px 4px
+	rgba(0,0,0.7);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+@keyframes flash {
+  0%   { opacity: 1; transform: scale(1) rotate(0deg); }
+  100% { opacity: 0.4; transform: scale(1.05) rotate(3deg); }
+}
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* Adjust opacity here */
+  z-index: -1;
+  pointer-events: none;
+}
+
+.neon-text {
+  font-size: 4rem;
+  color: #ff3c00;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 1px #ff3c00,
+    0 0 3px #ff3c00,
+    0 0 6px #ff3c00,
+    0 0 10px #ff1a00,
+    0 0 20px #cc1100;
+}
+
+/*
+@keyframes neon-pulse {
+  0% {
+    text-shadow:
+      0 0 5px #ff4e00,
+      0 0 10px #ff4e00,
+      0 0 20px #ff4e00,
+      0 0 40px #ff2200,
+      0 0 60px #ff2200;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #ff4e00,
+      0 0 20px #ff4e00,
+      0 0 30px #ff2200,
+      0 0 60px #ff2200,
+      0 0 80px #ff2200;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #ff4e00,
+      0 0 10px #ff4e00,
+      0 0 20px #ff4e00,
+      0 0 40px #ff2200,
+      0 0 60px #ff2200;
+  }
+}
+
+@keyframes neon-shake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(-1px, 1px) rotate(-1deg); }
+  50%  { transform:
+*/
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-section {
+  color: #ffffff;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 100);
+}
+
+.bg-light {
+    background-color: var(--light-gray);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Header */
+#main-header {
+    background-color: var(--white);
+    color: var(--dark-gray);
+    padding: 0 10px; /* Reduced padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--header-height);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+#logo {
+    height: 50px; /* Adjust as needed */
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar ul li {
+    margin-left: 20px;
+}
+
+#navbar ul li a {
+    color: var(--dark-gray);
+    padding: 5px 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.active {
+    color: var(--primary-color);
+}
+
+.social-icons-header {
+    display: flex;
+}
+.social-icons-header a {
+    color: var(--dark-gray);
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+.social-icons-header a:hover {
+    color: var(--primary-color);
+}
+
+
+#mobile-menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    color: var(--dark-gray);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('images/welcome-to-jacks-real.png'); /* Or your preferred image */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - var(--header-height));
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5em;
+    color: var(--white);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5em;
+}
+
+/* About Us Section */
+.about-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.about-image {
+    flex: 1;
+}
+.about-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.about-text {
+    flex: 1;
+}
+
+.about-page .content-section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.about-text {
+    background: rgba(155, 155, 155, 0.7); /* semi-transparent white */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: #FFF;
+}
+#about h2 {
+    display: none;
+}
+#about.content-section {
+    padding: 40px 0;
+}
+.service-item {
+    background: rgba(155, 155, 155, 0.75); /* semi-transparent white */
+    backdrop-filter: blur(8px); /* blur background behind */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden; /* Important for the image to respect border-radius if it's a direct child */
+}
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.service-item img {
+    width: 100%; /* Make image take full width of card */
+    height: 200px; /* Set a fixed height for images, adjust as desired */
+    object-fit: cover; /* Ensures image covers the area, maintaining aspect ratio and cropping if needed */
+    display: block; /* Removes potential space below the image */
+    /* margin-bottom: 15px; */ /* Removed, as spacing is handled by .service-item-content padding */
+}
+
+.service-item-content { /* Container for text below the image */
+    padding: 20px; /* Add padding to the text content */
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-top: 0; /* In case there was any default top margin */
+}
+/* p in service-item-content will use its default margins or you can style it specifically */
+
+
+/* Location & Hours Section */
+.location-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+.location-map {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 450px; /* You can bump this to 500+ if needed */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  filter: brightness(0.95) contrast(1.1);
+}
+
+.location-details {
+    flex: 1;
+    padding: 25px;
+    border-radius: 8px;
+}
+.location-details h3 {
+    margin-top: 0;
+}
+.location-details p {
+    margin-bottom: 0.8em;
+}
+.location-details strong {
+    color: var(--dark-gray);
+}
+
+/* Testimonials Section */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+.testimonial-item {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.testimonial-item blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #666;
+}
+.testimonial-item cite {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+.about-image {
+  flex: 1.2;
+}
+
+.about-text {
+  flex: 1;
+}
+/* Footer */
+#main-footer {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 30px 0;
+}
+#main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social-icons-footer a {
+    color: var(--light-gray);
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+.social-icons-footer a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+
+    #main-header {
+        position: relative;
+        height: auto;
+        box-shadow: none;
+    }
+    #main-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .logo-link {
+        margin-bottom: 10px;
+    }
+
+    #navbar {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+    #navbar.active {
+        display: block;
+    }
+    #navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    #navbar ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    #navbar ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+    #navbar ul li:last-child a {
+        border-bottom: none;
+    }
+
+
+    #mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        right: 20px;
+    }
+
+    .social-icons-header {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+    .social-icons-header a {
+        margin: 0 10px;
+    }
+
+    #hero {
+        height: 70vh;
+    }
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .about-content,
+    .location-content {
+        flex-direction: column;
+    }
+    .about-image {
+        margin-bottom: 20px;
+    }
+    .location-map {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    #main-footer .container {
+        flex-direction: column;
+    }
+    #main-footer p {
+        margin-bottom: 10px;
+    }
+    .social-icons-footer a {
+        margin: 0 10px;
+    }
+}
+.bg-services {
+    background-image: url('images/vintage-surf-paradise.jpg'); /* use any image you want */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-break {
+    background-image: url('images/welcome-to-jacks-real.png'); /* Or another themed image */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px; /* Adjust height as desired */
+}
+
+#about {
+    position: relative;
+    overflow: hidden;
+}
+
+#about .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.nav {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav .logo img {
+  width: 40px;
+}
+.nav .menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.nav .menu div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #000;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav .menu {
+    display: flex;
+  }
+}
+
+/* Style for the video background in the Location & Hours section */
+.location-bg {
+    position: relative; /* Needed for absolute positioning of the video */
+    overflow: hidden; /* To contain the video within the section */
+}
+
+.location-bg .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the video behind the content */
+}
+
+.location-bg .section-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the video fill the container */
+}
+.directions-button {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: #ff3c00;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.directions-button:hover {
+  background-color: #cc2f00;
+  transform: translateY(-2px);
+}
+.hero-map-row {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ← This is the key change */
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.hero-map-logo {
+  height:180px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding-top: 20px; /* optional: add more to push logo lower */
+}
+
+.hero-map-logo img {
+  width: 100%;
+  height: auto;
+  border-radius: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-map-content {
+  flex: 1 1 600px;
+  text-align: center;
+}
+
+  .hero-map-logo {
+    max-height: 160px;
+    margin-bottom: 20px;
+  }
+
+  .hero-map-logo img {
+    max-height: 160px;
+  }
+
+  .hero-map-container iframe {
+    height: 350px;
+  }
+}
+.logo-with-button {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.directions-button {
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  background-color: #ff3c00;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.directions-button:hover {
+  background-color: #cc2f00;
+  transform: translateY(-1px);
+}
+
+.directions-button:hover {
+  background-color: #cc2f00;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-map-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-map-logo {
+    max-width: 120px;
+  }
+
+  .hero-map-container iframe {
+    height: 350px;
+  }
+}
+
+/* Adjust the content within the Location & Hours section to ensure readability */
+#location .container {
+    position: relative; /* To ensure content stays on top of the video */
+    background-color: rgba(255, 255, 255, 0); /* Optional: Add a semi-transparent background for better text readability */
+    padding: 20px; /* Add some padding around the content */
+}
+
+/* Map Overlay for Transparency Effect */
+.location-bg .map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Match the height of the iframe */
+    background-color: rgba(255, 255, 255, 0.15); /* Adjust the alpha value for transparency (1 - 0.85 = 0.15) */
+    z-index: -1; /* Place it between the video and the map */
+}
+.hero-map-container iframe {
+  width: 100%;
+  height: 400px; /* Try 400–500px for desktop */
+  max-width: 800px;
+  border-radius: 10px;
+  border: none;
+  filter: brightness(1.05) contrast(1.1);
+}
+.hero-map-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+
+#location h3,
+#location p,
+#location strong,
+#location a {
+    color: #CCC; /* Adjust text color as needed for contrast */
+		text-shadow: 2px 2px 1px
+	rgba(0,0,0.6);
+}
+
+.location-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.location-map {
+    flex: 1 1 400px; /* Minimum width of 400px */
+}
+
+.location-details {
+    flex: 1 1 300px; /* Minimum width of 300px */
+}
+
+#about .container {
+    position: relative;
+    z-index: 2;
+}
+.parallax-video {
+    position: relative;
+    height: 700px; /* or 400px if you want it taller */
+    overflow: hidden;
+}
+
+.parallax-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+
+    /* NEW: shift the video up */
+    transform: translateY(-0%);
+}
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Optional: darken for contrast */
+    z-index: -1;
+}
+
+/*
+    IMPORTANT: The large block of redundant CSS that was previously
+    at the end of this file has been removed. It was causing conflicts
+    and was not needed.
+*/
+
+.faq-page p,
+.faq-page li {
+  color: #fff;
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.8);
+}
+
+.faq-page h3,
+.faq-page h2,
+.faq-page h1 {
+  color: #fff;
+  text-shadow: 2px 3px 2px rgba(0,0,0,0.7);
+}
+.faq-page #navbar a {
+    color: #000;
+    text-shadow: none; /* Optional: add back contrast on video */
+}
+
+.faq-page #navbar a:hover {
+    color: #333; /* or any accent color */
+}
