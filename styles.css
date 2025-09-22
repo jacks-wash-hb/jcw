@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; /* Enlarged logo */
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+/* Hero Section */
+.hero {
+    background: #2563eb;
+    min-height: 60vh; /* Further reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 0; /* Removed padding-top */
+    position: relative;
+}
+
+
+.hero-content {
+    padding: 40px 20px; /* Added padding to content for spacing */
+}
+
+.hero.parallax-bg {
+    background: linear-gradient(rgba(37, 99, 235, 0.7), rgba(37, 99, 235, 0.7)), url("assets/images/wave-wall.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-logo img {
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 2.5rem; /* Further reduced to fit on one line */
+    font-weight: bold;
+    color: #fbbf24;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.flashy-open {
+    background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcc02, #ff6b35);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.8), 0 0 40px rgba(255, 107, 53, 0.6), 0 0 50px rgba(255, 107, 53, 0.4);
+    font-weight: 900;
+    font-size: 3.5rem; /* Larger font size */
+    letter-spacing: 5px; /* Increased letter spacing for more pop */
+    text-transform: uppercase;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #fbbf24;
+    color: #1f2937;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.cta-button:hover {
+    background: #f59e0b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-card {
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.blue-card {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+}
+
+.yellow-card {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.service-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.service-card li {
+    padding: 5px 0;
+    opacity: 0.9;
+}
+
+/* Drive-Thru Section */
+.drive-thru {
+    padding: 80px 0;
+    background: white;
+}
+
+.drive-thru-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.drive-thru-image {
+    position: relative;
+}
+
+.drive-thru-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.drive-thru-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #fbbf24;
+    color: #1f2937;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.drive-thru-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.drive-thru-text p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.service-badge {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* Location Section */
+.location {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.location-info {
+    text-align: center;
+}
+
+.location-logo img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.location-info h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.address {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.location-link {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.location-link:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.map-container {
+    background: #e5e7eb;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 15px;
+}
+
+
+
+/* Contact Section */
+.contact {
+    padding: 50px 0; /* Reduced padding */
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-copyright {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.footer-text {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .drive-thru-content,
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .nav {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    .hero-logo img {
+        height: 150px;
+    }
+}
+
+
+
+footer {
+    background: #1e293b;
+    color: #cbd5e1;
+    padding: 15px 0; /* Further reduced padding */
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* Pricing Info Styles */
+.pricing-info {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.pricing-info h3 {
+    color: #fbbf24;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.pricing-info h4 {
+    color: #fbbf24;
+    margin: 15px 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.pricing-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+.location.parallax-bg {
+    background: linear-gradient(rgba(37, 99, 235, 0.7), rgba(37, 99, 235, 0.7)), url("assets/images/wave-wall.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120%; /* Zoomed out a bit */
+    color: white;
+}
+
+.location.parallax-bg .section-title, .location.parallax-bg h2, .location.parallax-bg p, .location.parallax-bg .address {
+    color: white;
+}
+
+
+.history-content-tile {
+    background: rgba(255, 255, 255, 0.7); /* More opaque white overlay */
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    background-image: url("assets/images/ez-wash1973.png");
+    background-size: 150%; /* More zoomed in */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Changed blend mode for different effect */
+}
+
+
+
+/* History Section */
+.history {
+    padding: 80px 0;
+    background: white;
+    text-align: center;
+}
+
+.history-icon {
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+
+.history h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.history p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.history-badge {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+.history-content-tile h2, .history-content-tile p {
+    color: #000; /* Ensure all text inside the tile is white */
+}
+
+.history-content-tile .history-badge {
+    color: #333; /* Keep badge text dark for contrast */
+    background: #fbbf24; /* Yellow background for badge */
+}
+
+
+
+
+.history-content-tile {
+    background: rgba(255, 255, 255, 0.55) !important; /* Increased opacity */
+    padding: 80px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    background-image: url("assets/images/ez-wash1973.png") !important;
+    background-size: 200% !important; /* More zoomed in */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-blend-mode: overlay !important;
+}
+
