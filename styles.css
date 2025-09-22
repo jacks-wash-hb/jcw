@@ -476,7 +476,7 @@ footer {
 
 
 .location.parallax-bg {
-    background: linear-gradient(rgba(37, 99, 235, 0.7), rgba(37, 99, 235, 0.7)), url("assets/images/wave-wall.webp");
+    background: linear-gradient(rgba(37, 99, 235, 0.75), rgba(37, 99, 235, 0.7)), url("assets/images/wave-wall.webp");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
